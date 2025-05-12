@@ -28,7 +28,9 @@ This package
 - **px4_msgs.msg ROS package** built and sourced in your workspace  
 - Python 3 dependencies (will be pulled in by `rosdep`)
 
-> **Note:** You must have the `px4_msgs.msg` package in your ROS 2 workspace prior to building this package.
+> **Note:** You must have the `px4_msgs.msg` package in your ROS 2 workspace prior to building this package.  
+> **IMPORTANT**  
+> You have to change the package name from "drone_flycircle" 2 "drone_fly_circle" in order for this package to work, otherwise you would need to change setup.py.  
 
 ## Installation
 
