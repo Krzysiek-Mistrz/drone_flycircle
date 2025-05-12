@@ -6,19 +6,20 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
 def generate_launch_description():
+    # Simulation
     px4_sitl = ExecuteProcess(
         cmd=['make', 'px4_sitl', 'gz_x500'],
         cwd=os.path.expanduser('~/PX4-Autopilot'),
         output='screen'
     )
 
-    # Uruchom Micro-ROS Agent
+    # Micro-ROS-Agent
     micro_ros_agent = ExecuteProcess(
         cmd=['MicroXRCEAgent', 'udp4', '-p', '8888'],
         output='screen'
     )
 
-    # Node sterujący dronem
+    # Our Node
     drone_control_node = Node(
         package='drone_fly_circle',
         executable='drone_fly_circle',
